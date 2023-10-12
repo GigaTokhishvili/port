@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    --main-color: #222831;
+    --secondary-color: #393E46;
+    --third-color: #EEEEEE;
+    --forth-color: #00ADB5;
+}
+
+body {
+    background: var(--main-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+}
+
+h5 {
+    color: var(--forth-color);
+}

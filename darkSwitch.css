@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#moon_spots {
+    opacity: 1;
+}
+
+#sun, #rays {
+    transform: translateX(58%);
+    opacity: 0;
+}
+
+#moon_spots {
+    transform: translateX(58%);
+}
+
+#stars {
+    transform: translateY(15%);
+}
+
+#clouds {
+    transform: translateY(130%);
+}
+
+#rect {
+    fill: #1d1f2d;
+}
