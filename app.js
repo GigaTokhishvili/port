@@ -40,6 +40,7 @@ moon.addEventListener('click', () => {
 
 
 function changeTheme() {
+    console.log(2)
     if (localStorage.key(0) == 'light') {
         gsap.to('#rect', {duration: 1, opacity: 0, ease: "power3.out",});
         gsap.to('#rectDark', {duration: 1, opacity: 1, ease: "power3.out",});
