@@ -40,7 +40,6 @@ moon.addEventListener('click', () => {
 
 
 function changeTheme() {
-    console.log(2)
     if (localStorage.key(0) == 'light') {
         gsap.to('#rect', {duration: 1, opacity: 0, ease: "power3.out",});
         gsap.to('#rectDark', {duration: 1, opacity: 1, ease: "power3.out",});
@@ -80,5 +79,40 @@ window.addEventListener('load', () => {
     loader.classList.add('loader-hidden');
     loader.addEventListener('transitionend', () => {
         document.body.removeChild(loader);
+    })
+})
+
+
+// scrolling 
+const home = document.getElementById('home');
+const about = document.getElementById('about');
+const projects = document.getElementById('projects');
+const contact = document.getElementById('contact');
+
+home.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+})
+
+about.addEventListener('click', () => {
+    window.scrollTo({
+        top: 600,
+        behavior: 'smooth',
+    })
+})
+
+projects.addEventListener('click', () => {
+    window.scrollTo({
+        top: 1400,
+        behavior: 'smooth',
+    })
+})
+
+contact.addEventListener('click', () => {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
     })
 })
