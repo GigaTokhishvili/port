@@ -8,7 +8,7 @@ const switchDiv = document.getElementById('switch');
 const darkSwitch = document.getElementById('darkSwitch');
 const loader = document.querySelector('.loader');
 
-localStorage.length > 0 ? covers.style.display = 'none' : null;
+localStorage.length > 0 ? covers.style.display = 'none' : document.body.classList.add('no-overflow');
 
 if (localStorage.key(0) === 'dark') {
     theme.href = './dark.css';
@@ -21,6 +21,7 @@ sun.addEventListener('click', () => {
     covers.classList.add('fadeAway');
     localStorage.setItem('light', 'true');
     setTimeout(() => {
+        document.body.classList.remove('no-overflow');
         covers.style.display = 'none';
     }, 700)
 })
@@ -34,6 +35,7 @@ moon.addEventListener('click', () => {
     theme.href = './dark.css';
     darkSwitch.href = './darkSwitch.css';
     setTimeout(() => {
+        document.body.classList.remove('no-overflow');
         covers.style.display = 'none';
     }, 700)
 })
