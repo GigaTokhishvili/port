@@ -148,6 +148,7 @@ header h3:hover {
 
 /* switch switch */
 #switch {
+    height: 2em;
     cursor: pointer;
 }
 
@@ -173,13 +174,22 @@ section {
     align-items: center;
 }
 
+/* container */
+
+.container {
+    width: 65rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* intro section */
 .intro {
     padding-top: 10%;
 }
 
 .intro-text {
-    width: 30%;
+    width: 50%;
 }
 
 .intro h1 {
@@ -239,8 +249,8 @@ section {
 }
 
 /* about */
-.about {
-    gap: 5%;
+.intro {
+    display: flex;
 }
 
 .coding-image {
@@ -257,7 +267,7 @@ section {
 }
 
 .about-text {
-    max-width: 480px;
+    max-width: 430px;
     height: 333px;
     display: flex;
     flex-direction: column;
@@ -298,7 +308,7 @@ h4 {
 }
 
 .project {
-    max-width: 52%;
+    max-width: 65rem;
     max-height: 53%;
     padding: 1.2rem;
     background-color: #fff;
@@ -325,7 +335,7 @@ h4 {
 }
 
 .project-image:hover {
-    transform: translateY(-75%);
+    transform: translateY(-73%);
 }
 
 .project-text {
@@ -390,13 +400,13 @@ h4 {
 }
 
 .contact-form {
-    max-width: 70%;
+    width: 65rem;
     max-height: 70%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     padding: 2rem;
     display: flex;
-    gap: 4em;
+    justify-content: space-between;
     display: flex;
     align-items: center;
 }
@@ -434,30 +444,4 @@ form textarea {
     background-color: var(--first-color);
     color: var(--third-color);
     transition: 300ms;
-}
-
-@media (max-width: 1400px) {
-    /* projects */
-    .project {
-        flex-direction: column;
-        max-height: 100%;
-    }
-
-    .project-image-div {
-        max-width: fit-content;
-    }
-
-    .project-text {
-        max-width: 80%;
-    }
-
-    /* contact */
-    .contact {
-        margin: 15em 0 2em;
-        height: fit-content;
-    }
-    .contact-form {
-        max-height: 100%;
-        flex-direction: column;
-    }
 }
