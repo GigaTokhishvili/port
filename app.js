@@ -8,13 +8,33 @@ const switchDiv = document.getElementById('switch');
 const darkSwitch = document.getElementById('darkSwitch');
 const loader = document.querySelector('.loader');
 
-localStorage.length > 0 ? covers.style.display = 'none' : document.body.classList.add('no-overflow');
 
-if (localStorage.key(0) === 'dark') {
+// loading screen
+window.addEventListener('load', () => {
+    loader.classList.add('loader-hidden');
+    loader.addEventListener('transitionend', () => {
+        document.body.removeChild(loader);
+    })
+})
+
+// handling local storage
+for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.key(i) === 'light' || localStorage.key(i) === 'dark') {
+        covers.style.display = 'none';
+        break;
+    } else {
+        document.body.classList.add('no-overflow');
+    }
+} 
+
+
+
+if (localStorage.getItem('dark')) {
     theme.href = './dark.css';
     darkSwitch.href = './darkSwitch.css';
 }
 
+// handling theme switch
 sun.addEventListener('click', () => {
     sunParent.classList.add('expand');
     moonParent.classList.add('shrink');
@@ -35,14 +55,14 @@ moon.addEventListener('click', () => {
     theme.href = './dark.css';
     darkSwitch.href = './darkSwitch.css';
     setTimeout(() => {
-        document.body.classList.remove('no-overflow');
+        document.body.classList.remove('no-overflow');  
         covers.style.display = 'none';
     }, 700)
 })
 
 
 function changeTheme() {
-    if (localStorage.key(0) == 'light') {
+    if (localStorage.getItem('light')) {
         gsap.to('#rect', {duration: 1, opacity: 0, ease: "power3.out",});
         gsap.to('#rectDark', {duration: 1, opacity: 1, ease: "power3.out",});
         gsap.to('#sun', { duration: 1, x: 53, opacity: 0, ease: "power3.out",});
@@ -75,15 +95,6 @@ function changeTheme() {
 }
 
 switchDiv.addEventListener('click', changeTheme);
-
-
-window.addEventListener('load', () => {
-    loader.classList.add('loader-hidden');
-    loader.addEventListener('transitionend', () => {
-        document.body.removeChild(loader);
-    })
-})
-
 
 // scrolling 
 const home = document.getElementById('home');

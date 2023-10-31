@@ -100,3 +100,8 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .covers {
+        width: 100%;
+    }
+}

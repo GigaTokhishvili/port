@@ -6,7 +6,7 @@
     --second-color: #DBE2EF;
     --third-color: #112D4E;
     --forth-color: #3F72AF;
-    font-family: Poppins,sans-serif;
+    font-family: 'Roboto',sans-serif;
 }
 
 body {
@@ -110,7 +110,6 @@ body {
 /* header header */
 header {
     background-color: var(--second-color);
-    color: var(--third-color);
     position: fixed;
     height: 8%;
     width: 100%;
@@ -124,27 +123,89 @@ header {
     z-index: 111;
 }
 
-ul {
-    list-style: none;
+nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 50px;
+    list-style: none;
+    text-align: center;
 }
 
-li {
+nav ul li h4{
+    display: block;
+    padding: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
     cursor: pointer;
+    margin: 0 10px;
+    font-size: .85em;
+    color: var(--third-color);
+    transition: color 1s;
 }
 
-li h4:hover {
-    color: var(--forth-color);
+nav ul li,
+nav ul li:after,
+nav ul li:before {
+  transition: all .5s;
 }
 
-header h3:hover {
-    cursor: pointer;
+nav ul li h4:hover {
+  color: var(--first-color);
 }
 
+nav ul li h4{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+nav ul li h4:after {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '.';
+    color: transparent;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+nav ul li h4:hover:after {
+    animation: circle 1.5s ease-in forwards;
+}
+
+@keyframes circle {
+    0% {
+      width: 1px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 1px;
+      z-index: -1;
+      background: var(--third-color);
+      border-radius: 100%;
+    }
+    100% {
+      background: var(--forth-color);
+      height: 5000%;
+      width: 5000%;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 0;
+    }
+  }
 
 /* switch switch */
 #switch {
@@ -211,16 +272,45 @@ section {
     justify-content: baseline;
     align-items: center;
     margin-top: 8%;
+    gap: 1em;
 }
 
 .intro svg {
     height: 3em;
     fill: var(--third-color);
-    padding-right: 5%;
-    transition: fill 300ms;
+    transition: fill 300ms ease-in;
+}
+
+.intro .links svg {
+    width: 100%;
 }
 
 .intro svg:hover {
+    fill: var(--forth-color);
+}
+
+#cv {
+    height: 3em;
+    transition: 300ms;
+}
+
+#cv path, #cv circle, #cv rect {
+    stroke: white;
+}
+
+#cv circle {
+    fill: var(--third-color);
+}
+
+#rectangle1, #rectangle2 {
+    fill: var(--third-color);
+}
+
+#cv:hover #rectangle1 {
+    fill: var(--forth-color);
+}
+
+#cv:hover #rectangle2 {
     fill: var(--forth-color);
 }
 
@@ -288,7 +378,7 @@ h4 {
 
 .about p {
     color: var(--third-color);
-    font-weight: 100;
+    font-weight: 300;
 }
 
 /* projects */
@@ -377,8 +467,9 @@ h4 {
 }
 
 .project-link {
-    width: 40%;
+    width: 50%;
     text-decoration: none;
+    border-radius: 25px;
     color: var(--third-color);
     display: flex;
     align-items: center;
@@ -388,7 +479,7 @@ h4 {
 }
 
 .project-link:hover {
-    color:var(--forth-color);
+    color: var(--forth-color);
 }
 
 /* contact contact */
@@ -444,4 +535,109 @@ form textarea {
     background-color: var(--first-color);
     color: var(--third-color);
     transition: 300ms;
+}
+
+@media only screen and (max-width: 1400px) {
+    section {
+        height: 100vh;
+    }
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    header {
+        height: 5%;
+    }
+
+    section {
+        height: fit-content;
+        width: 100%;
+        padding-top: 5em;
+    }
+
+    .container {
+        min-width: 95%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .intro .container {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 2em;
+    }
+
+    .intro .intro-text {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .intro h1 {
+        padding-top: 10%;
+    }
+
+    .intro .tech-stack {
+        width: 100vw;
+    }
+
+    .coding-image {
+        width: 95%;
+    }
+
+    .about-text {
+        width: 95%;
+        text-align: center;
+    }
+    
+    .project {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .project-image-div {
+        max-width: 100%;
+        height: 15em;
+    }
+
+    .project-text {
+        max-width: 100%;
+        padding-top: 2em;
+        gap: .7em;
+    }
+
+    .about .container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .contact {
+        height: fit-content;
+    }
+
+    .contact-form {
+        width: 95%;
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+
+    .form-parent {
+        width: 100%;
+    }
+
+    .contact-form form {
+        width: 100%;
+    }
+
+    .contact-form input {
+        width: 100%;
+    }
 }

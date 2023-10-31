@@ -16,10 +16,6 @@ header {
     color: var(--third-color);
 }
 
-h5 {
-    color: var(--forth-color);
-}
-
 .project {
     background-color: var(--second-color);
 }
