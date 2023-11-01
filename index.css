@@ -290,16 +290,20 @@ section {
 }
 
 #cv {
-    height: 3em;
+    height: 2.7em;
     transition: 300ms;
 }
 
 #cv path, #cv circle, #cv rect {
-    stroke: white;
+    stroke: var(--first-color);
 }
 
 #cv circle {
     fill: var(--third-color);
+}
+
+#cv line {
+    stroke: var(--first-color);
 }
 
 #rectangle1, #rectangle2 {
@@ -311,6 +315,10 @@ section {
 }
 
 #cv:hover #rectangle2 {
+    fill: var(--forth-color);
+}
+
+#cv:hover circle {
     fill: var(--forth-color);
 }
 

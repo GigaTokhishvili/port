@@ -18,14 +18,11 @@ window.addEventListener('load', () => {
 })
 
 // handling local storage
-for (let i = 0; i < localStorage.length; i++) {
-    if (localStorage.key(i) === 'light' || localStorage.key(i) === 'dark') {
+    if (localStorage.getItem('light') === 'true' || localStorage.key('darj') === 'true') {
         covers.style.display = 'none';
-        break;
     } else {
         document.body.classList.add('no-overflow');
     }
-} 
 
 
 
