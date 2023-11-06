@@ -559,6 +559,10 @@ form textarea {
         height: 5%;
     }
 
+    nav.container {
+        justify-content: center;
+    }
+
     section {
         height: fit-content;
         width: 100%;
