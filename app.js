@@ -18,17 +18,16 @@ window.addEventListener('load', () => {
 })
 
 // handling local storage
-    if (localStorage.getItem('light') === 'true' || localStorage.key('darj') === 'true') {
-        covers.style.display = 'none';
-    } else {
-        document.body.classList.add('no-overflow');
-    }
+if (localStorage.getItem('light') === 'true') {
+    covers.style.display = 'none';
 
-
-
-if (localStorage.getItem('dark')) {
+} else if (localStorage.getItem('dark') === 'true') {
     theme.href = './dark.css';
     darkSwitch.href = './darkSwitch.css';
+    covers.style.display = 'none';
+    
+} else {
+    document.body.classList.add('no-overflow');
 }
 
 // handling theme switch
@@ -59,7 +58,7 @@ moon.addEventListener('click', () => {
 
 
 function changeTheme() {
-    if (localStorage.getItem('light')) {
+    if (localStorage.getItem('light') === 'true') {
         gsap.to('#rect', {duration: 1, opacity: 0, ease: "power3.out",});
         gsap.to('#rectDark', {duration: 1, opacity: 1, ease: "power3.out",});
         gsap.to('#sun', { duration: 1, x: 53, opacity: 0, ease: "power3.out",});
