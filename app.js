@@ -97,6 +97,9 @@ const home = document.getElementById('home');
 const about = document.getElementById('about');
 const projects = document.getElementById('projects');
 const contact = document.getElementById('contact');
+const aboutSection = document.querySelector('.about');
+const projectsSection = document.querySelector('.projects');
+
 
 home.addEventListener('click', () => {
     window.scrollTo({
@@ -106,15 +109,15 @@ home.addEventListener('click', () => {
 })
 
 about.addEventListener('click', () => {
-    window.scrollTo({
-        top: 600,
+    aboutSection.scrollIntoView({
+        block: 'center',
         behavior: 'smooth',
     })
 })
 
 projects.addEventListener('click', () => {
-    window.scrollTo({
-        top: 1400,
+    projectsSection.scrollIntoView({
+        block: 'center',
         behavior: 'smooth',
     })
 })
