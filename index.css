@@ -12,6 +12,7 @@
 body {
     background-color: var(--first-color);
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 .no-overflow {
@@ -335,6 +336,7 @@ section {
 
 .tech-stack h2 {
     width: 40%;
+    white-space: nowrap;
 }
 
 .intro .tech-stack {
@@ -421,7 +423,7 @@ h4 {
     gap: 7%;
 }
 
-.car-rental {
+.reversed {
     justify-content: flex-end;
     gap: 5rem;
 }
@@ -429,15 +431,26 @@ h4 {
 .project-image-div {
     max-width: 50%;
     height: 100%;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 1rem;
     overflow: hidden;
     transform: translateY(0%);
 }
 
+.wordle .project-image-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .project-image {
     width: 100%;
     transition: transform 5s ease-in-out 0s;
+}
+
+.wordle-image {
+    height: 100%;
+    width: auto;
 }
 
 .photographers-image:hover {
@@ -446,6 +459,14 @@ h4 {
 
 .car-image:hover {
     transform: translateY(-79%);
+}
+
+.airbnb-image:hover {
+    transform: translateY(-29.5%);
+}
+
+.netflix-image:hover {
+    transform: translateY(-2%);
 }
 
 .project-text {
@@ -677,5 +698,11 @@ form textarea {
 
     .contact-form input {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .tech-stack h2 {
+        display: none;
     }
 }
