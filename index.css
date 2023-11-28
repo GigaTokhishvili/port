@@ -648,7 +648,7 @@ form textarea {
         height: auto;
     }
 
-    .car-rental {
+    .reversed {
         flex-direction: column-reverse;
         gap: 0;
     }
