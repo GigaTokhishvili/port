@@ -24,8 +24,10 @@
 .cover-up {
     background-color: rgb(204, 204, 204);
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem
 }
 
 .cover-down {
