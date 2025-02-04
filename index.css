@@ -108,6 +108,8 @@ body {
     to { transform: rotate(1turn)}
 }
 
+
+
 /* header header */
 header {
     background-color: var(--second-color);
@@ -208,6 +210,8 @@ nav ul li h4:hover:after {
     }
   }
 
+
+
 /* switch switch */
 #switch {
     height: 2em;
@@ -217,6 +221,10 @@ nav ul li h4:hover:after {
 #rectDark {
     opacity: 0;
 }
+
+/* #moon {
+    transform: translateX(0px);
+} */
 
 #moon_spots {
     opacity: 0;
@@ -589,7 +597,7 @@ form textarea {
 @media only screen and (max-width: 1000px) {
 
     header {
-        height: 5%;
+        height: 8%;
     }
 
     nav.container {
